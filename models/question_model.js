@@ -36,12 +36,13 @@ Question.prototype.inputArea = function ()
   }
 };
 
-//Acordarse Exportar este método!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Question.prototy.SimpleSelecctionQ = function(){
-
-};
-//Acordarse Exportar este método!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-Question.prototy.MultiSelecctionQ = function(){
+var SimpleChoice = function SimpleChoice(frage,antwor) {
+  // body...
+  Question.call(this,frage,antwor);
+  this.vista="";
+  for(var i=0;i<=antwor.size()-1;i++){
+    this.opciones="";
+  }
 
 };
 

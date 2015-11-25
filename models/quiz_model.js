@@ -23,6 +23,10 @@ function Quiz() {
     {
       pregunta:  new S.ShortQuestion('When I see a bird that walks like a duck and swims like a duck and quacks like a duck, ¿May i say it is a duck?(true or false, in lower case, testing strin input)'),
       respuesta: new Answer("true")
+    },
+    {
+      pregunta: new S.SimpleChoice("¿ 1 2 3 4 X 6?",['5','7','8','9']),
+      respuesta: new Answer('5')
     }
   );
   // insertar unas cuantas preguntas sobre
@@ -45,6 +49,9 @@ function Quiz() {
     })();
   }
   // debug(this.q);
+
+
+
 }
 
 Quiz.prototype = new AbstractQuiz();

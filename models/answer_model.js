@@ -14,6 +14,7 @@ function Answer(args) {
                     // es lo mismo esto
                     // var t = /^foo(bar)?$/i;
                     // alert(t.constructor == RegExp);//returns true
+
                     return function(x) { return x.match(args); };
                     //Tratando de hacer duck-typing
                   }else if(this.args && this.args.constructor && this.args.call && this.args.apply)
@@ -22,6 +23,7 @@ function Answer(args) {
 
                           }else if(this.args instanceof Array)
                                   {
+                                    console.log(typeof args);
                                     return args;
                                   }else
                                       {
