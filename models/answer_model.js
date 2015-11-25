@@ -20,10 +20,13 @@ function Answer(args) {
                           {
                             return args;
 
-                          }else
-                              {
-                                return typeof this.args != 'undefined';
-                              }
+                          }else if(this.args instanceof Array)
+                                  {
+                                    return args;
+                                  }else
+                                      {
+                                        return typeof this.args != 'undefined';
+                                      }
 
 }
 
