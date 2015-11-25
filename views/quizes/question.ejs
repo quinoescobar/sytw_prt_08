@@ -1,0 +1,7 @@
+<h2>Quiz: el juego de las preguntas</h2>
+<form method="get" action="/quizes/answer">
+  <p>Pregunta: <%- pregunta.frage %></p>
+  <%# <input type="text" name="respuesta" placeholder="Ponga la respuesta" autofocus="">%>
+  <%-  pregunta.vista  %>
+  <input type="submit" value="Responder">
+</form>

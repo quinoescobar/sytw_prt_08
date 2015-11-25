@@ -1,0 +1,10 @@
+<h3>Lista de preguntas del Quiz</h3>
+<% if(lista !== null){ %>
+  <ul>
+    <% for(var i = 0; i < lista.length-1; i++){ %>
+      <li> Pregunta <%= i + 1 %>:
+        <a href="/quizes/questions/<%= i+1 %>"><%- lista[i].pregunta.frage %></a>
+      </li>
+    <% } %>
+  </ul>
+<% } %>
