@@ -38,24 +38,24 @@ Question.prototype.inputArea = function ()
 
 var SimpleChoice = function SimpleChoice(frage,optionen) {
   // body...
-  Question.call(this,frage,antwort);
+  Question.call(this,frage,optionen);
   this.frage=frage;
   this.optionen=optionen;
 
   this.vista="";
-  for(var i=0;i<=antwor.size()-1;i++){
+  for(var i=0;i<=optionen.length-1;i++){
     this.opciones="";
   }
 
 };
 var MultiChoice = function MultiChoice(frage,optionen) {
   // body...
-  Question.call(this,frage,antwort);
+  Question.call(this,frage,optionen);
   this.frage=frage;
   this.optionen=optionen;
 
   this.vista="";
-  for(var i=0;i<=antwor.size()-1;i++){
+  for(var i=0;i<=optionen.length-1;i++){
     this.opciones="";
   }
 

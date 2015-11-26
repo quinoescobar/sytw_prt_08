@@ -2,6 +2,8 @@ var AbstractQuiz = require('../models/abstract_quiz_model');
 var Answer = require('../models/answer_model');
 var S = require('../models/question_model');
 var L = require('../models/question_model');
+var Sc = require('../models/question_model');
+var Mc = require('../models/question_model');
 function Quiz() {
   AbstractQuiz.call(this);
   this.q.push(
@@ -25,8 +27,16 @@ function Quiz() {
       respuesta: new Answer("true")
     },
     {
-      pregunta: new S.SimpleChoice("¿ 1 2 3 4 X 6?",['5','7','8','9']),
+      pregunta: new Sc.SimpleChoice("1 2 3 4 X 6¿Cuanto vale X?",['5','7','8','9']),
       respuesta: new Answer('5')
+    },
+    {
+      pregunta: new Sc.SimpleChoice("¿Cual es la Diosa Olímpica de la agricultura, la nutricia, el ciclo de la vida?",['Rea','Demeter','Afrodita','Ceres']),
+      respuesta: new Answer('Demeter')
+    },
+    {
+      pregunta: new Mc.MultiChoice("¿Cuales son frutas?",['tomate','cebolla','mango','aguacate']),
+      respuesta: new Answer(['aguacate','tomate','mango'])
     }
   );
   // insertar unas cuantas preguntas sobre
