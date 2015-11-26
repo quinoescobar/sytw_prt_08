@@ -36,9 +36,24 @@ Question.prototype.inputArea = function ()
   }
 };
 
-var SimpleChoice = function SimpleChoice(frage,antwor) {
+var SimpleChoice = function SimpleChoice(frage,optionen) {
   // body...
-  Question.call(this,frage,antwor);
+  Question.call(this,frage,antwort);
+  this.frage=frage;
+  this.optionen=optionen;
+
+  this.vista="";
+  for(var i=0;i<=antwor.size()-1;i++){
+    this.opciones="";
+  }
+
+};
+var MultiChoice = function MultiChoice(frage,optionen) {
+  // body...
+  Question.call(this,frage,antwort);
+  this.frage=frage;
+  this.optionen=optionen;
+
   this.vista="";
   for(var i=0;i<=antwor.size()-1;i++){
     this.opciones="";
@@ -54,6 +69,8 @@ var SimpleChoice = function SimpleChoice(frage,antwor) {
 exports.Question = Question;
 exports.ShortQuestion = ShortQuestion;
 exports.LongQuestion = LongQuestion;
+exports.MultiChoice = MultiChoice;
+exports.SimpleChoice = SimpleChoice;
 // module.exports = function() {
 //     console.log('Exportando ');
 //
