@@ -46,15 +46,14 @@ var SimpleChoice = function SimpleChoice(frage,optionen) {
   // var templateString = fs.readFileSync('template.ejs', 'utf-8');
   var self=this;
   var ejs=require('ejs');
-  html = ejs.renderFile('views/quizes/simpleQuestion',{optionen: optionen},
+  this.html = ejs.renderFile('quizes/simpleQuestion',{optionen: optionen},
   function(err,result){
     if(!err)
     {
-      response.end(result);
       console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ-Deberia renderizar");
     }else {
-      response.end('ERROR: Ha ocurrido algo, UPS!');
-      console.log(err);
+
+      console.log('ERROR: Ha ocurrido algo, UPS!'+err);
     }
   });
     console.log("EJS CONTIENE ALGO");

@@ -2,6 +2,6 @@
 <form method="get" action="/quizes/answer">
   <p>Pregunta: <%- pregunta.frage %></p>
   <%# <input type="text" name="respuesta" placeholder="Ponga la respuesta" autofocus="">%>
-  <%-  pregunta.vista  %>
+  <%-  include(pregunta.html)  %>
   <input type="submit" value="Responder">
 </form>
