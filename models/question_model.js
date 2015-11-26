@@ -45,11 +45,13 @@ var SimpleChoice = function SimpleChoice(frage,optionen) {
   // var fs = require('fs');
   // var templateString = fs.readFileSync('template.ejs', 'utf-8');
   var self=this;
+
   var ejs=require('ejs');
-  this.html = ejs.renderFile('quizes/simpleQuestion',{optionen: optionen},
+  ejs.renderFile('quizes/simpleQuestion.ejs',{optionen: this.optionen},
   function(err,result){
     if(!err)
     {
+      self.vista=result;
       console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ-Deberia renderizar");
     }else {
 
