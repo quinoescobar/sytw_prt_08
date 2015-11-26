@@ -26,19 +26,29 @@ function Answer(args) {
                                     console.log(typeof args);
                                     return function(x)
                                             {
+                                              //si el array tiene valor falso, lo retorna
+                                              if(!args)
+                                                return false;
+                                              //ahorrar tiempo comparando el tamaño
+                                              if(this.length != x.length)
+                                                return false;
+
                                               var aux;
                                               for(var i=0; x.length;i++)
                                               {
-                                                if(args[i]=== x[i]){
-                                                  this.aux.push(x[i]);
+                                                //Dos instancias de objeto difetentes nunca seran iguales eg: {x:20} != {x:20}
+                                                if(args[i] != x[i]){
+                                                  return false;
                                                 }
                                               }
-
+                                              return true;
+                                    
                                             };
-                                  }else
+                                    }else
                                       {
                                         return typeof this.args != 'undefined';
                                       }
+
 
 }
 
