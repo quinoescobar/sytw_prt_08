@@ -24,7 +24,17 @@ function Answer(args) {
                           }else if(this.args instanceof Array)
                                   {
                                     console.log(typeof args);
-                                    return args;
+                                    return function(x)
+                                            {
+                                              var aux;
+                                              for(var i=0; x.length;i++)
+                                              {
+                                                if(args[i]=== x[i]){
+                                                  this.aux.push(x[i]);
+                                                }
+                                              }
+
+                                            };
                                   }else
                                       {
                                         return typeof this.args != 'undefined';

@@ -43,12 +43,17 @@ var SimpleChoice = function SimpleChoice(frage,optionen) {
   this.optionen=optionen;
   // var fs = require('fs');
   // var templateString = fs.readFileSync('template.ejs', 'utf-8');
-  var ejs=require('ejs');
   var self=this;
-  ejs.render("views/simpleQuest.ejs",{optionen: optionen},
-  function(err,html){
-    if(err) throw err;
-      self.vista=html;
+  var ejs=require('ejs');
+  ejs.render('views/quizes/simpleQuestion.ejs',{optionen: optionen},
+  function(err,result){
+    if(!err)
+    {
+      respoinse.end(result);
+    }else {
+      response.end('ERROR: Ha ocurrido algo, UPS!');
+      console.log(err);
+    }
   });
 };
 var MultiChoice = function MultiChoice(frage,optionen) {
