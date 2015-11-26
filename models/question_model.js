@@ -41,12 +41,15 @@ var SimpleChoice = function SimpleChoice(frage,optionen) {
   Question.call(this,frage,optionen);
   this.frage=frage;
   this.optionen=optionen;
-
-  this.vista="";
-  for(var i=0;i<=optionen.length-1;i++){
-    this.opciones="";
-  }
-
+  // var fs = require('fs');
+  // var templateString = fs.readFileSync('template.ejs', 'utf-8');
+  var ejs=require('ejs');
+  var self=this;
+  ejs.render("views/simpleQuest.ejs",{optionen: optionen},
+  function(err,html){
+    if(err) throw err;
+      self.vista=html;
+  });
 };
 var MultiChoice = function MultiChoice(frage,optionen) {
   // body...
