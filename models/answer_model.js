@@ -23,11 +23,11 @@ function Answer(args) {
 
                           }else if(this.args instanceof Array)
                                   {
-                                    console.log(typeof args);
+                                    console.log("Answer:-Array "+ this.args.constructor.name);
                                     return function(x)
                                             {
                                               //si el array tiene valor falso, lo retorna
-                                              if(!args)
+                                              if(!x)
                                                 return false;
                                               //ahorrar tiempo comparando el tamaño
                                               if(this.length != x.length)
@@ -42,7 +42,7 @@ function Answer(args) {
                                                 }
                                               }
                                               return true;
-                                    
+
                                             };
                                     }else
                                       {

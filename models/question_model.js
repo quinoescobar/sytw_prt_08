@@ -11,7 +11,7 @@ var ShortQuestion=function ShortQuestion(frage) {
   //input
   console.log("ShortQuestion"+ this.frage);
     this.vista="<input type='text' name='respuesta' placeholder='Ponga la respuesta' autofocus=''>";
-  console.log("ShortQuestion"+ this.vista);
+  //console.log("ShortQuestion"+ this.vista);
 };
 
 var LongQuestion=function LongQuestion(frage) {
@@ -20,7 +20,7 @@ var LongQuestion=function LongQuestion(frage) {
   //textarea
   console.log("LongQuestion"+ this.frage);
   this.vista="<textarea name='respuesta' rows='4' cols='50' placeholder='Ponga la respuesta' autofocus=''></textarea>";
-  console.log("LongQuestion"+ this.vista);
+  //console.log("LongQuestion"+ this.vista);
 
 };
 
@@ -39,33 +39,44 @@ Question.prototype.inputArea = function ()
 var SimpleChoice = function SimpleChoice(frage,optionen) {
   // body...
   Question.call(this,frage,optionen);
+  console.log("SimpleChoice  "+ this.frage);
   this.frage=frage;
   this.optionen=optionen;
   // var fs = require('fs');
   // var templateString = fs.readFileSync('template.ejs', 'utf-8');
   var self=this;
   var ejs=require('ejs');
-  ejs.render('views/quizes/simpleQuestion.ejs',{optionen: optionen},
+  html = ejs.renderFile('views/quizes/simpleQuestion',{optionen: optionen},
   function(err,result){
     if(!err)
     {
-      respoinse.end(result);
+      response.end(result);
+      console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ-Deberia renderizar");
     }else {
       response.end('ERROR: Ha ocurrido algo, UPS!');
       console.log(err);
     }
   });
+    console.log("EJS CONTIENE ALGO");
 };
 var MultiChoice = function MultiChoice(frage,optionen) {
   // body...
   Question.call(this,frage,optionen);
+  console.log("MultiChoice  "+ this.frage);
   this.frage=frage;
   this.optionen=optionen;
 
-  this.vista="";
-  for(var i=0;i<=optionen.length-1;i++){
-    this.opciones="";
-  }
+  var ejs=require('ejs');
+  ejs.render('views/quizes/simpleQuestion',{optionen: optionen},
+  function(err,result){
+    if(!err)
+    {
+      response.end(result);
+    }else {
+      response.end('ERROR: Ha ocurrido algo, UPS!');
+      console.log(err);
+    }
+  });
 
 };
 
