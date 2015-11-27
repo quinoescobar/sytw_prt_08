@@ -1,8 +1,8 @@
 <ul>
-  <% for(var i=0;i< pregunta.optionen.length;i++) { %>
+  <% for(var i=0;i< optionen.length;i++) { %>
     <%# <option type='text' name='respuesta' placeholder='Ponga la respuesta' autofocus=''></option>%>
   <li>
-    <input type="text" name="respuesta" placeholder="Ponga la respuesta" autofocus=""> <%- pregunta.optionen[i] %>
+    <input type="text" name="respuesta" placeholder="Ponga la respuesta" autofocus=""> <%- optionen[i] %>
   </li>
   <% } %>
 </ul>
