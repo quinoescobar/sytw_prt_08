@@ -38,7 +38,7 @@ Question.prototype.inputArea = function ()
 
 var SimpleChoice = function SimpleChoice(frage,optionen) {
   // body...
-  Question.call(this,frage,optionen);
+  Question.call(this,frage);
   console.log("SimpleChoice  "+ this.frage);
   this.frage=frage;
   this.optionen=optionen;
@@ -47,22 +47,22 @@ var SimpleChoice = function SimpleChoice(frage,optionen) {
   var self=this;
 
   var ejs=require('ejs');
-  ejs.renderFile('quizes/simpleQuestion.ejs',{optionen: this.optionen},
+  ejs.renderFile('views/quizes/simpleQuestion.ejs',{optionen: this.optionen},
   function(err,result){
     if(!err)
     {
-      this.vista=result;
+      self.vista=result;
       console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ-Deberia renderizar");
     }else {
 
       console.log('ERROR: Ha ocurrido algo, UPS!'+err);
     }
   });
-    console.log("EJS CONTIENE ALGO");
+    console.log("EJS CONTIENE ALGO   "+self.vista);
 };
 var MultiChoice = function MultiChoice(frage,optionen) {
   // body...
-  Question.call(this,frage,optionen);
+  Question.call(this,frage);
   console.log("MultiChoice  "+ this.frage);
   this.frage=frage;
   this.optionen=optionen;
@@ -72,9 +72,9 @@ var MultiChoice = function MultiChoice(frage,optionen) {
   function(err,result){
     if(!err)
     {
-      response.end(result);
+      self.vista=result;
     }else {
-      response.end('ERROR: Ha ocurrido algo, UPS!');
+      // response.end('ERROR: Ha ocurrido algo, UPS!');
       console.log(err);
     }
   });
