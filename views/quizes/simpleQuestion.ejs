@@ -1,10 +1,7 @@
-<ul>
+
   <% for(var i=0;i< optionen.length;i++) { %>
     <%# <option type='text' name='respuesta' placeholder='Ponga la respuesta' autofocus=''></option>%>
-  <li>
-     <%- optionen[i] %>
-  </li>
+
+      <input type="Radio" name="respuesta" Value="<%- optionen[i] %>"><%- optionen[i] %></input>
 
   <% } %>
-  <input type="text" name="respuesta" placeholder="Ponga la respuesta" autofocus="">
-</ul>

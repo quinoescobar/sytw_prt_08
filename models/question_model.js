@@ -1,5 +1,5 @@
 " use strict";
-
+var ejs=require('ejs');
 var Question =function Question(frage) {
   // body...
   this.frage=frage;
@@ -46,7 +46,6 @@ var SimpleChoice = function SimpleChoice(frage,optionen) {
   // var templateString = fs.readFileSync('template.ejs', 'utf-8');
   var self=this;
 
-  var ejs=require('ejs');
   ejs.renderFile('views/quizes/simpleQuestion.ejs',{optionen: this.optionen},
   function(err,result){
     if(!err)
@@ -68,7 +67,7 @@ var MultiChoice = function MultiChoice(frage,optionen) {
   this.optionen=optionen;
   var self=this;
 
-  var ejs=require('ejs');
+
   ejs.renderFile('views/quizes/multiQuestion.ejs',{optionen: this.optionen},
   function(err,result){
     if(!err)
