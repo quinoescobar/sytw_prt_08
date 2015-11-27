@@ -51,7 +51,7 @@ var SimpleChoice = function SimpleChoice(frage,optionen) {
   function(err,result){
     if(!err)
     {
-      self.vista=result;
+      this.vista=result;
       console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ-Deberia renderizar");
     }else {
 
@@ -68,7 +68,7 @@ var MultiChoice = function MultiChoice(frage,optionen) {
   this.optionen=optionen;
 
   var ejs=require('ejs');
-  ejs.render('views/quizes/simpleQuestion',{optionen: optionen},
+  ejs.render('views/quizes/multiQuestion.ejs',{optionen: optionen},
   function(err,result){
     if(!err)
     {
