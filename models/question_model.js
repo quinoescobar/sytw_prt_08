@@ -69,11 +69,12 @@ var MultiChoice = function MultiChoice(frage,optionen) {
   var self=this;
 
   var ejs=require('ejs');
-  ejs.render('views/quizes/multiQuestion.ejs',{optionen: this.optionen},
+  ejs.renderFile('views/quizes/multiQuestion.ejs',{optionen: this.optionen},
   function(err,result){
     if(!err)
     {
       self.vista=result;
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-Deberia renderizar");
     }else {
       // response.end('ERROR: Ha ocurrido algo, UPS!');
       console.log('ERROR: Ha ocurrido algo, UPS!  '+err);
