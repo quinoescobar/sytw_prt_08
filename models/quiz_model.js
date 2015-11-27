@@ -36,7 +36,7 @@ function Quiz() {
     },
     {
       pregunta: new Mc.MultiChoice("¿Cuales son frutas?",['tomate','cebolla','mango','aguacate']),
-      respuesta: new Answer(['aguacate','tomate','mango'])
+      respuesta: new Answer(['tomate','mango','aguacate'])
     }
   );
   // insertar unas cuantas preguntas sobre

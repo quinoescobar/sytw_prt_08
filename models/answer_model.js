@@ -27,21 +27,25 @@ function Answer(args) {
                                     return function(x)
                                             {
                                               //si el array tiene valor falso, lo retorna
-                                              if(!x)
-                                                return false;
+                                              if(!x){console.log("1er return");
+                                              return false;}
+
                                               //ahorrar tiempo comparando el tamaño
-                                              if(this.length != x.length)
-                                                return false;
+                                              if(args.length != x.length){console.log("2do return");
+                                              return false;}
+
 
                                               var aux;
                                               for(var i=0; x.length;i++)
                                               {
                                                 //Dos instancias de objeto difetentes nunca seran iguales eg: {x:20} != {x:20}
-                                                if(args[i] != x[i]){
+                                                if(x[i] != args[i]){
+                                                  console.log("3er return");
                                                   return false;
-                                                }
+                                                }else{console.log("4to return");
+                                                return true;}
                                               }
-                                              return true;
+
 
                                             };
                                     }else
