@@ -66,18 +66,20 @@ var MultiChoice = function MultiChoice(frage,optionen) {
   console.log("MultiChoice  "+ this.frage);
   this.frage=frage;
   this.optionen=optionen;
+  var self=this;
 
   var ejs=require('ejs');
-  ejs.render('views/quizes/multiQuestion.ejs',{optionen: optionen},
+  ejs.render('views/quizes/multiQuestion.ejs',{optionen: this.optionen},
   function(err,result){
     if(!err)
     {
       self.vista=result;
     }else {
       // response.end('ERROR: Ha ocurrido algo, UPS!');
-      console.log(err);
+      console.log('ERROR: Ha ocurrido algo, UPS!  '+err);
     }
   });
+  console.log("EJS CONTIENE ALGO   "+self.vista);
 
 };
 
